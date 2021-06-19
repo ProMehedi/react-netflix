@@ -2,14 +2,14 @@ import React from 'react'
 
 const GetStartedForm = () => {
   return (
-    <form className='mt-5 md:mt-10'>
-      <h3 className='text-base md:text-xl text-center mb-4'>
+    <form className='mt-5 md:mt-10 max-w-2xl w-11/12 mx-auto'>
+      <h3 className='text-base md:text-xl text-white text-center mb-4'>
         Ready to watch? Enter your email to create or restart your membership.
       </h3>
       <div className='text-center px-5 md:px-0 md:flex md:flex-row'>
         <div className='flex-initial w-full'>
           <input
-            className='w-full px-4 py-3 h-14 text-black rounded-l'
+            className='w-full px-4 py-3 h-16 text-black rounded-l'
             type='email'
             name='email'
             placeholder='Email address'
@@ -17,7 +17,7 @@ const GetStartedForm = () => {
         </div>
         <button
           type='submit'
-          className='mt-3 md:mt-0 flex-initial w-5/12 font-semibold text-center duration-200 bg-red-600 focus:bg-red-700 hover:bg-red-700 px-4 py-3 h-14 text-base md:text-xl lg:text-2xl rounded-r'
+          className='mt-3 md:mt-0 flex-initial w-5/12 font-semibold text-center text-white duration-200 bg-red-600 focus:bg-red-700 hover:bg-red-700 px-4 py-4 h-16 text-base md:text-xl lg:text-2xl rounded-r'
         >
           Get Started
           <svg
