@@ -25,7 +25,9 @@ const AccordionItem = ({ title, content }) => {
 
       <div
         className={`duration-200 ${
-          toggle ? 'max-h-96 p-2 md:p-5' : 'max-h-0 overflow-hidden'
+          toggle
+            ? 'max-h-96 p-2 md:p-5'
+            : 'px-2 md:px-5 max-h-0 overflow-hidden'
         }`}
       >
         {content}
