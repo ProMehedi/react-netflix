@@ -9,7 +9,7 @@ const Navbar = () => {
       </Link>
       <div>
         <Link
-          to='/login'
+          to='/signin'
           className='inline-block bg-red-600 text-white font-medium tex-base px-4 py-1 rounded'
         >
           Sign In

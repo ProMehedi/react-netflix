@@ -1,6 +1,6 @@
 import React from 'react'
 import Faq from '../components/Faq'
-import Header from '../components/Header'
+import Header from '../components/header/index'
 import Jumbotron from '../components/Jumbotron'
 import jumboData from '../fixtures/jumbo.json'
 

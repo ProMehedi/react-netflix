@@ -1,7 +1,7 @@
 import React from 'react'
 import faqData from '../fixtures/faqs'
 import AccordionItem from './AccordionItem'
-import GetStartedForm from './GetStartedForm'
+import GetStartedForm from './header/GetStartedForm'
 
 const Faq = () => {
   return (

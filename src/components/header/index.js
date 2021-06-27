@@ -1,18 +1,10 @@
 import React from 'react'
 import GetStartedForm from './GetStartedForm'
-import Navbar from './Navbar'
+import HeaderContainer from './HeaderContainer'
 
-const Header = ({ bg }) => {
+const Header = () => {
   return (
-    <div
-      className='py-6'
-      style={{
-        background: `url(${
-          bg ? `/images/misc/${bg}.jpg` : '/images/misc/home-bg.jpg'
-        }) top center / cover no-repeat`,
-      }}
-    >
-      <Navbar />
+    <HeaderContainer>
       <div className='text-center text-white py-14 md:py-20 lg:py-32 xl:py-40'>
         <h1 className='font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl'>
           Unlimited movies, TV <br /> shows, and more.
@@ -22,7 +14,7 @@ const Header = ({ bg }) => {
         </h3>
         <GetStartedForm />
       </div>
-    </div>
+    </HeaderContainer>
   )
 }
 
