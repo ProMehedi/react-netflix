@@ -1,15 +1,37 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HeaderContainer from '../components/header/HeaderContainer'
+import FirebaseContext from '../context/FirebaseContext'
 
-const Signin = () => {
+const Signin = ({ history }) => {
+  console.log(history)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  const [message, setMessage] = useState('')
   const isValid = email === '' || password === ''
 
-  const submitHandler = (e) => {
+  const { firebase } = useContext(FirebaseContext)
+
+  const submitHandler = async (e) => {
     e.preventDefault()
+
+    try {
+      const reqAuth = await firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+
+      console.log(reqAuth)
+
+      // Redirect to home page
+      history.push('/')
+
+      // Clear Form Data
+      setEmail('')
+      setPassword('')
+      setMessage('')
+    } catch (err) {
+      setMessage(err.message)
+    }
   }
 
   return (
@@ -51,10 +73,15 @@ const Signin = () => {
                 </Link>
                 .
               </p>
-              <p className='text-gray-400 text-sm'>
+              <p className='text-gray-400 text-sm mb-4'>
                 This page is protected by Google reCAPTCHA to ensure you're not
                 a bot.
               </p>
+              {message && (
+                <p className='text-red-900 font-semibold text-xs bg-red-300 px-4 py-2 rounded'>
+                  {message}
+                </p>
+              )}
             </form>
           </div>
         </div>
