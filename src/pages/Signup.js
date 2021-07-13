@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import HeaderContainer from '../components/header/HeaderContainer'
 import FirebaseContext from '../context/FirebaseContext'
+import AuthListener from '../hooks/AuthListener'
 
 const Signup = ({ history }) => {
   const [name, setName] = useState('')
@@ -11,6 +12,12 @@ const Signup = ({ history }) => {
   const isValid = name === '' || email === '' || password === ''
 
   const { firebase } = useContext(FirebaseContext)
+
+  const { user } = AuthListener()
+
+  if (user) {
+    history.push('/')
+  }
 
   const submitHandler = async (e) => {
     e.preventDefault()
