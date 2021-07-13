@@ -18,7 +18,7 @@ const AuthListener = () => {
     })
 
     return listener()
-  }, [])
+  }, [firebase])
 
   return { user }
 }

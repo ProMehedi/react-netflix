@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Footer from './components/Footer'
+import Browse from './pages/Browse'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Signin from './pages/Signin'
@@ -11,6 +12,7 @@ const App = () => {
     <>
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route exact path='/browse' component={Browse} />
         <Route exact path='/signin' component={Signin} />
         <Route exact path='/signup' component={Signup} />
         <Route component={NotFound} />
